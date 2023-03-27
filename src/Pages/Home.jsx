@@ -22,7 +22,7 @@ export default function Home(){
         console.log(endpoints)
         
         axios.all(endpoints.map((endpoint)=>axios.get(endpoint))).then((res)=>setPokemons(res))
-        //console.log(axios.get(`https://pokeapi.co/api/v2/pokemon/`)).then((res)=>setPokemons(res))
+        axios.get(`https://pokeapi.co/api/v2/pokemon/1/`).then((res)=>console.log(res))
     }
 
 
@@ -62,19 +62,31 @@ export default function Home(){
             return '#63614e'
         }
         if (types[0].type.name==='normal') {
-            return '#bb832b'
+            return '#563317'
         }
         if (types[0].type.name==='ground') {
             return '#7e7747'
         }
         if (types[0].type.name==='fighting') {
-            return '#9eaeae'
+            return '#c6ac01'
         }
         if (types[0].type.name==='ghost') {
             return '#372837'
         }
         if (types[0].type.name==='psychic') {
+            return '#044318'
+        }
+        if (types[0].type.name==='bug') {
             return '#f6aecd'
+        }
+        if (types[0].type.name==='dragon') {
+            return '#e76138'
+        }
+        if (types[0].type.name==='fairy') {
+            return '#fc4e8b'
+        }
+        if (types[0].type.name==='dark') {
+            return '#222642'
         }
     }
 
